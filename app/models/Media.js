@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    //USER TABLE 
+    //MEDIATABLE 
     var Media = sequelize.define("Media", {
       media_name: {
         type: DataTypes.STRING,
