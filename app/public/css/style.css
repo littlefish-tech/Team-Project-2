@@ -50,8 +50,18 @@ footer {
     width: 100%;
 
 }
-.nav-link {
-    margin-left: 15px;
+.nav-link1 {
+    margin-left: 18px;
+    margin-bottom: 10px;
+    background-color: #f6b93b;
+    margin-top: 10px;;
+    height: 35px;
+    width: 160px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 footer {
