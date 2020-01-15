@@ -12,62 +12,77 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <body>
-      <div class = "container">
+  <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Silver Screen</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-          </ul>
-
-          <form class = "loginContainer" action="/action_page.php">
-            <button class = "logBut" type="submit">Logout</button> |
+      <a class="navbar-brand" href="#">Silver Screen</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+    
+        <form class="loginContainer" action="/action_page.php">
+          <button class="logBut" type="submit">Logout</button> |
+        </form>
+    
+    
+        <span>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="logBut btn my-sm-0" type="submit">Search</button>
           </form>
-
-
-
-          <span>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="logBut btn my-sm-0" type="submit">Search</button>
-            </form>
-          </span>
-        </div>
-      </nav>
-
-      <!-- Nav tabs -->
-      <div class = "container">
-      <div class="nav flex-column nav-pills navPro" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+        </span>
       </div>
-      <div class="tab-content navProContent" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-      </div>
-      </div>
- <footer>
-    <div class="footer-copyright text-center py-3 bg-dark text-white">© 2020 Copyright: Silver Screen
-      <a href="#"> www.example.com</a>
+    </nav>
     </div>
-    <!-- Copyright -->
+  <!-- Nav tabs -->
+<div class = "container">
+    <div class="row">
+      <div class="nav flex-column nav-pills navPro col-lg-3 col-md-3 col-sm-12" id="v-pills-tab" role="tablist"
+        aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true">Login Email</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+          aria-controls="v-pills-profile" aria-selected="false">Login Password</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+          aria-controls="v-pills-messages" aria-selected="false">Your Saved Movies</a>
   
-  </footer>
+        <div class="tab-content navProContent col-lg-9 col-md-9 col-sm-12" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <form action="/action_page.php">
+              Your Login Email:<br><br>
+              <input type="text" name="firstname" placeholder="abc@gmail.com">
+              <br><br>
+              <input type="submit" value="Save">
+              <input type="submit" value="Cancel">
+            </form>
+          </div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+        </div>
+      </div>
+      </div>
+</div>
+<div class = "container">
+      <footer>
+        <div class="footer-copyright text-center py-3 bg-dark text-white">© 2020 Copyright: Silver Screen
+          <a href="#"> www.example.com</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -45,3 +45,18 @@ body {
   float: right;
   padding-left: 10px;
 }
+
+footer {
+    width: 100%;
+
+}
+.nav-link {
+    margin-left: 15px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 77.8%;
+
+  }
