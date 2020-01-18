@@ -53,6 +53,32 @@ module.exports = function(app) {
     })
   });
 
+  app.post("/api/media", function(req, res) {
+    // Add code here to update a post using the values in req.body, where the id is equal to
+    // req.body.id and return the result to the user using res.json
+    db.Media.create({
+      media_name: req.body.media_name,
+      description: req.body.description,
+      release_yr: req.body.release_year,
+      creator_id: req.body.creator_id
+    }).then(function(results){
+      console.log(results);
+      res.json(results);
+    })
+  });
+
+  app.post("/api/usermedia", function(req, res) {
+    // Add code here to update a post using the values in req.body, where the id is equal to
+    // req.body.id and return the result to the user using res.json
+    db.Usermedia.create({
+      mediaId: req.body.mediaId,
+      userId: req.body.userId
+    }).then(function(results){
+      console.log(results);
+      res.json(results);
+    })
+  });
+
   // POST route for ratings
   app.post("/api/ratings", function(req, res) {
     // Add sequelize code for creating a post using req.body,
