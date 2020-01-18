@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
           }
         }
       },
-      createrID:{
+      creatorID:{
         type: DataTypes.INTEGER,
         allowNull: false,
       }   

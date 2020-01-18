@@ -13,7 +13,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts
-  app.get("/api/movies", function(req, res) {
+  app.get("/api/media", function(req, res) {
     // Add sequelize code to find all posts, and return them to the user with res.json
     db.Media.findAll({}).then(function(results){
       res.json(results);
@@ -21,7 +21,7 @@ module.exports = function(app) {
   });
 
   // Get route for returning posts of a specific category
-  app.get("/api/movies/category/:category", function(req, res) {
+  app.get("/api/media/category/:category", function(req, res) {
     // Add sequelize code to find all posts where the category is equal to req.params.category,
     // return the result to the user with res.json
     db.Media.findAll({
@@ -83,13 +83,14 @@ module.exports = function(app) {
   });
 
   // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
+  app.put("/api/media", function(req, res) {
     // Add code here to update a post using the values in req.body, where the id is equal to
     // req.body.id and return the result to the user using res.json
-    db.Post.update({
-      title: req.body.title,
-      body: req.body.body,
-      category: req.body.category
+    db.Media.update({
+      media_name: req.body.media_name,
+      description: req.body.description,
+      release_yr: req.body.release_year,
+      creator_id: req.body.creator_id
     },{
       where: {
         id: req.body.id
