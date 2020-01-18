@@ -35,7 +35,8 @@ module.exports = function(sequelize, DataTypes) {
             msg: "Email must be valid"
           }
         }
-      }     
+      }
+           
 
     });
     return Users;

@@ -33,17 +33,22 @@ module.exports = function(app) {
     })
   });
 
-  // Get route for retrieving a single post
-  app.get("/api/users/", function(req, res) {
-    // Add sequelize code to find a single post where the id is equal to req.params.id,
-    // return the result to the user with res.json
-    db.Users.findAll({}).then(function(results){
+  app.get("/api/ratings/", function(req, res){
+    db.Ratings.findAll({}).then(function(results){
       res.json(results);
     })
   });
 
-  app.get("/api/ratings/", function(req, res){
-    db.Ratings.findAll({}).then(function(results){
+  //POST ROUTE FOR USERS
+  app.post("/api/users", function(req, res) {
+    // Add sequelize code for creating a post using req.body,
+    // then return the result using res.json
+    db.Users.create({
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email
+    }).then(function(results){
+      console.log(results);
       res.json(results);
     })
   });
@@ -82,6 +87,7 @@ module.exports = function(app) {
     })
   });
 
+
   // PUT route for updating posts
   app.put("/api/media", function(req, res) {
     // Add code here to update a post using the values in req.body, where the id is equal to
@@ -91,6 +97,22 @@ module.exports = function(app) {
       description: req.body.description,
       release_yr: req.body.release_year,
       creator_id: req.body.creator_id
+    },{
+      where: {
+        id: req.body.id
+      }
+    }).then(function(results){
+      console.log(results);
+      res.json(results);
+    })
+  });
+
+
+  app.put("/api/ratings", function(req, res) {
+    // Add code here to update a post using the values in req.body, where the id is equal to
+    // req.body.id and return the result to the user using res.json
+    db.Ratings.update({
+      stars: req.body.stars,
     },{
       where: {
         id: req.body.id
