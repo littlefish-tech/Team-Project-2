@@ -33,12 +33,12 @@
         </ul>
     
 
-        <a href = "home.html"><button class="button logBut button4">Logout</button></a>
+        <a href = "home.html"><button class="button logBut clickBut button4">Logout</button></a>
 
         <span>
           <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="logBut btn my-sm-0" type="submit">Search</button>
+            <button class="logBut clickBut btn my-sm-0" type="submit">Search</button>
           </form>
         </span>
       </div>
@@ -55,77 +55,77 @@
         aria-controls="v-pills-password" aria-selected="false">Login Password</a>
       <a class="nav-link1" id="v-pills-saved-tab" data-toggle="pill" href="#v-pills-saved" role="tab"
         aria-controls="v-pills-saved" aria-selected="false">Your Saved Movies</a>
+    </div>
 
     <div class="tab-content navProContent col-lg-9 col-md-9 col-sm-12" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-pills-login" role="tabpanel" aria-labelledby="v-pills-login-tab">
-        <form action="/action_page.php">
-          Your Login Email:<br><br>
-          <input type="text" name="firstname" placeholder="abc@gmail.com">
-          <br><br>
-          <input type="submit" value="Save">
-          <input type="submit" value="Cancel">
-        </form>
+      <div class="tab-pane fade show active userEmail" id="v-pills-login" role="tabpanel" aria-labelledby="v-pills-login-tab"> Your Login Email:<br><br>
+        <input type="text" name="firstname" placeholder="abc@gmail.com">
+        <br><br>
+        <input type="submit" value="Save">
+        <input type="submit" value="Cancel">
+    
       </div>
-      <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
-        <form action="/action_page.php">
-          To Change your password:<br><br>
-          <input type="text" name="password" placeholder="#######">
-          <br><br>
-          <input type="submit" value="Save">
-          <input type="submit" value="Cancel">
-        </form>
+      <div class="tab-pane fade userPw" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab"> To Change your password:<br><br>
+        <input type="text" name="password" placeholder="#######">
+        <br><br>
+        <input type="submit" value="Save">
+        <input type="submit" value="Cancel">
+    
       </div>
-    <div class="tab-pane fade" id="v-pills-saved" role="tabpanel" aria-labelledby="v-pills-saved-tab">
-      <form action="/action_page.php">
-          <div class="card">
-            <img class="card-img-top"
-              src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
-              alt="Card image cap">
-            <div class="card-body">
-              <p class="cardText title">Name</p>
-              <p class="cardText rating">Rating</p>
-              <p class="cardText length">Length</p>
-              <p class="cardText cast&Crew">Cast & Crew</p>
-              <a href="#" class="card-link">More Movie Detail</a>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top"
-              src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
-              alt="Card image cap">
-            <div class="card-body">
-              <p class="cardText title">Name</p>
-              <p class="cardText rating">Rating</p>
-              <p class="cardText length">Length</p>
-              <p class="cardText cast&Crew">Cast & Crew</p>
-              <a href="#" class="card-link">More Movie Detail</a>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top"
-              src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
-              alt="Card image cap">
-            <div class="card-body">
-              <p class="cardText title">Name</p>
-              <p class="cardText rating">Rating</p>
-              <p class="cardText length">Length</p>
-              <p class="cardText cast&Crew">Cast & Crew</p>
-              <a href="#" class="card-link">More Movie Detail</a>
-            </div>
-          </div>
-        </form>
-      </div>
+      <div class="tab-pane fade" id="v-pills-saved" role="tabpanel" aria-labelledby="v-pills-saved-tab">
+ 
+                <div class = "container saveMovieContainer">
+                        <div class = "row">
+                                    <div class="card movieCard col-lg-3 col-md-3 col-sm-12">
+                                            <img class="card-img-top"
+                                                src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <p class="cardText title">Name</p>
+                                                <p class="cardText rating">Rating</p>
+                                                <p class="cardText length">Length</p>
+                                                <p class="cardText cast&Crew">Cast & Crew</p>
+                                                <a href="#" class="card-link">More Movie Detail</a>
+                                            </div>
+                                    </div>
+                                    <div class="card movieCard col-lg-3 col-md-3 col-sm-12">
+                                            <img class="card-img-top"
+                                                src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <p class="cardText title">Name</p>
+                                                <p class="cardText rating">Rating</p>
+                                                <p class="cardText length">Length</p>
+                                                <p class="cardText cast&Crew">Cast & Crew</p>
+                                                <a href="#" class="card-link">More Movie Detail</a>
+                                            </div>
+                                    </div>
+                                    <div class="card movieCard col-lg-3 col-md-3 col-sm-12">
+                                            <img class="card-img-top"
+                                                src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <p class="cardText title">Name</p>
+                                                <p class="cardText rating">Rating</p>
+                                                <p class="cardText length">Length</p>
+                                                <p class="cardText cast&Crew">Cast & Crew</p>
+                                                <a href="#" class="card-link">More Movie Detail</a>
+                                            </div>
+                                    </div>
+                        </div>
+                </div>
+
+        </div>
+
     </div>
 </div>
-<div class = "container">
-      <footer>
-        <div class="footer-copyright text-center py-3 bg-dark text-white">© 2020 Copyright: Silver Screen
-          <a href="#"> www.example.com</a>
-        </div>
-        <!-- Copyright -->
+<footer>
+  <div class="footer-copyright text-center py-3 bg-dark text-white">© 2020 Copyright: Silver Screen
+    <a href="#"> www.example.com</a>
+  </div>
+  <!-- Copyright -->
 
-      </footer>
-</div>
+</footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

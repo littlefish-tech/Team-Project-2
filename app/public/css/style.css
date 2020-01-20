@@ -15,12 +15,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.card{
+.movieCard{
     margin-bottom: 15px;
     width: 18rem;
+    padding: 5px;
 }
 
-.logBut:hover {
+.clickBut:hover {
     color: #ffffff !important;
     background: #f6b93b;
     border-color: #f6b93b !important;
@@ -64,9 +65,24 @@ footer {
     border-radius: 10px;
 }
 
-footer {
+/* footer {
     position: fixed;
     bottom: 0px;
     width: 77.8%;
 
+  } */
+
+  .saveMovieContainer {
+      width: 100%;
+      margin-top: 30px;
+  }
+
+  .userPw {
+      margin-top: 30px;
+      margin-bottom: 30px;
+  }
+
+  .userEmail {
+      margin-top: 30px;
+      margin-bottom: 30px;
   }
