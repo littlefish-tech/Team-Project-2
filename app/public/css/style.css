@@ -89,7 +89,7 @@ body {
   }
 
   .introCard {
-      height: 250px;
+      /* height: 250px; */
       margin-top: 20px;
       margin-bottom: 20px;
   }
@@ -97,7 +97,7 @@ body {
   .introCardImg {
       height: 200px;
       width: 200px;
-      margin: 20px;
+      margin: 30px;
       float: left;
   }
 
@@ -124,6 +124,10 @@ body {
 
 .signInBut {
     margin-left: 200px;
+}
+
+.signInButText {
+    color: white;
 }
 
 .loginFooter {
