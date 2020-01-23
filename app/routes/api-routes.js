@@ -32,20 +32,28 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+  
+  app.get("/api/users/", function(req, res){
+    db.User.findAll({}).then(function(results){
+      res.json(results);
+  });
+  });
 
   app.get("/api/ratings/", function(req, res){
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
-    })
+  });
+  });
 
   app.post('/login', 
   passport.authenticate('local', 
     { successRedirect: '/',
       failureRedirect: '/login',
+      successFlash: 'Welcome!',
       failureFlash: 'Invalid email or password.'  }),
   function(req, res) {    
   });
-  });
+ 
 
   //POST ROUTE FOR USERS
   app.post("/api/users", function(req, res) {
@@ -156,4 +164,5 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+
 };
