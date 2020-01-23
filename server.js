@@ -11,19 +11,18 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+var db = require("./models");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/catsController.js");
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes")(app);
 
-app.use(routes);
+// Static directory to be served
+app.use(express.static("app/public"));
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
