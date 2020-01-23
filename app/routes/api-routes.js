@@ -103,7 +103,7 @@ module.exports = function(app) {
   app.delete("/api/ratings/:id", function(req, res) {
     // Add sequelize code to delete a post where the id is equal to req.params.id, 
     // then return the result to the user using res.json
-    db.Post.destroy({
+    db.Ratings.destroy({
       where:
       {
         id: req.params.id
