@@ -37,6 +37,14 @@ module.exports = function(app) {
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
     })
+
+  app.post('/login', 
+  passport.authenticate('local', 
+    { successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: 'Invalid email or password.'  }),
+  function(req, res) {    
+  });
   });
 
   //POST ROUTE FOR USERS
