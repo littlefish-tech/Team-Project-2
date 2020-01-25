@@ -4,16 +4,22 @@ module.exports = function(sequelize, DataTypes) {
 
     //USER TABLE 
     var Users = sequelize.define("Users", {
-      username: {
+      first_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: {
-            args:[4,12],
-            msg: "Username must be between 4 and 12 characters long"
-          }
+          len:[2]
         }
       },
+
+      last_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len:[2]
+        }
+      },
+      
       password: {
         type: DataTypes.STRING,
         allowNull: false,
