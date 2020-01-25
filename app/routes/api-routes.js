@@ -4,8 +4,9 @@
 
 // Dependencies
 // =============================================================
-
+var passport = require("passport-local");
 // Requiring our Todo model
+
 var db = require("../models");
 
 // Routes
@@ -32,11 +33,23 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+  
+  app.get("/api/users/", function(req, res){
+    db.User.findAll({}).then(function(results){
+      res.json(results);
+  });
+  });
 
   app.get("/api/ratings/", function(req, res){
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
-    })
+  });
+  });
+
+  app.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
   });
 
   //POST ROUTE FOR USERS
@@ -103,7 +116,7 @@ module.exports = function(app) {
   app.delete("/api/ratings/:id", function(req, res) {
     // Add sequelize code to delete a post where the id is equal to req.params.id, 
     // then return the result to the user using res.json
-    db.Post.destroy({
+    db.Ratings.destroy({
       where:
       {
         id: req.params.id
@@ -148,4 +161,5 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+
 };
