@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var passport = require("passport-local");
+var passport = require("passport");
 // Requiring our Todo model
 
 var db = require("../models");
