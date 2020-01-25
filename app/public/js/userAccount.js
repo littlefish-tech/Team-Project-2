@@ -46,25 +46,26 @@ $(document).ready(function(){
       var newMovieCard = $("<div>");
       newMovieCard.addClass("card");
       var newMovieTitle = $("<h2>");
-      var newMovieRating = $("<small>");
-      var newMovieLength = $("<small>");
-      var newMovieCast = $("<small>")
+    //   var newMovieRating = $("<small>");
+      var newMovieDescription = $("<small>");
+      var newMovieRelYear = $("<small>")
 
 
       var newMovieCardBody = $("<div>");
       newMovieCardBody.addClass("card-body");
       var newMovieBody = $("<p>");
       newMovieTitle.text(Media.media_name + " ");
-      newMovieRating.text(Media.description);
-      newMovieLength.text(release_yr);
+    //   newMovieRating.text(Media.description);
+        newMovieRelYear.text(Media.release_yr);
+      newMovieDescription.text(Media.description);
       newPostTitle.append(newPostDate);
 
       newMovieCardBody.append(newMovieTitle);
-      newMovieCardBody.append(newMovieRating);
+      newMovieCardBody.append(newMovieDescription);
       newMovieCardBody.append(newMovieLength);
     //   newPostCard.append(newPostCardHeading);
     //   newPostCard.append(newPostCardBody);
-      newPostCard.data("Media", post);
+      newMoiveCard.data("Media", post);
       return newMovieCard;
     }
   
