@@ -4,8 +4,9 @@
 
 // Dependencies
 // =============================================================
-
+var passport = require("passport");
 // Requiring our Todo model
+
 var db = require("../models");
 
 // Routes
@@ -52,6 +53,7 @@ module.exports = function(app) {
       successFlash: 'Welcome!',
       failureFlash: 'Invalid email or password.'  }),
   function(req, res) {    
+    res.redirect('/');
   });
  
 

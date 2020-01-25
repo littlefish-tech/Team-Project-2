@@ -1,4 +1,4 @@
-$(document).reday(function(){
+$(document).ready(function(){
     
 })
 
