@@ -1,6 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     //MEDIATABLE 
     var Media = sequelize.define("Media", {
+      imageurl:{
+        type:DataTypes.STRING,
+        allowNull: false,
+      },
       media_name: {
         type: DataTypes.STRING,
         allowNull: false,
