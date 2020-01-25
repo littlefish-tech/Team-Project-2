@@ -47,10 +47,15 @@ module.exports = function(app) {
   });
 
   app.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
+  passport.authenticate('local', 
+    { successRedirect: '/',
+      failureRedirect: '/login',
+      successFlash: 'Welcome!',
+      failureFlash: 'Invalid email or password.'  }),
+  function(req, res) {    
     res.redirect('/');
   });
+ 
 
   //POST ROUTE FOR USERS
   app.post("/api/users", function(req, res) {

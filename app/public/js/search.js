@@ -6,6 +6,7 @@ $("#searchMovieBut").on("click", function(event) {
 
     // Here we grab the text from the input box
     var movie = $("#movieSearchInput").val();
+    var resultMovies = [];
 
     // Here we construct our URL
     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
@@ -20,6 +21,7 @@ $("#searchMovieBut").on("click", function(event) {
       method: "GET"
     }).then(function(response) {
       console.log(response);
+     resultMovies = response.data;
 
 
 
@@ -36,7 +38,7 @@ $("#searchMovieBut").on("click", function(event) {
         // (this is necessary otherwise we will have repeat buttons)
         $("#movies-view").empty();
         // Looping through the array of movies
-        for (var i = 0; i < movies.length; i++) {
+        for (var i = 0; i < resultMovies.length; i++) {
           
           // Then dynamicaly generating buttons for each movie in the array.
           // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
@@ -62,7 +64,7 @@ $("#searchMovieBut").on("click", function(event) {
         var movie = $("#movieSearchInput").val().trim();
         // The movie from the textbox is then added to our array
 
-        movies.push(movie);
+        movies.push(resultMovies);
         
         // calling renderButtons which handles the processing of our movie array
         renderButtons();
