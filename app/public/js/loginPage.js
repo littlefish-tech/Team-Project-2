@@ -1,4 +1,6 @@
-
+var name;
+var id;
+var userData;
 
 $(document).on("click", ".signInBut", function(){
 
@@ -42,7 +44,13 @@ $(document).on("click", ".signInBut", function(){
                 console.log(result);
                 
             })
-            window.location.replace("./user");
+
+            console.log(id);
+            window.location.replace("./");
+            name = res.email;
+            id = res.id;
+            userData = result;
+            
 
         }
         else{
@@ -54,3 +62,31 @@ $(document).on("click", ".signInBut", function(){
     })
 
 });
+loggedIn(name);
+checkLogin(id);
+
+console.log(userData);
+
+function checkLogin(id){
+
+    console.log("getting id? " +id);
+    $.get("/api/users/", {
+    where:{
+        id: id
+    }
+        
+    }).then(function(response){
+        
+        var num = parseInt(id-1);
+        console.log(id);
+        
+        console.log(response);
+})
+}
+
+function loggedIn(name){
+    $(".logBut").hide();
+    $("#username").text("Welcome, " + name);
+    console.log(name);
+}
+
