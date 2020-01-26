@@ -16,6 +16,11 @@ $(document).on("click", ".signInBut", function(){
     ).then(function(res){
         console.log(res);
 
+        if (res === null){
+            $(".loginPageText").text("Email not in our system");
+        }
+        else{
+        
         if (res.password == passwordC){
             console.log("well technically you logged in");
             $(".loginPageText").text("YOU LOGGED IN!");
@@ -23,6 +28,7 @@ $(document).on("click", ".signInBut", function(){
         else{
             console.log("wrong password");
             $(".loginPageText").text("Wrong Password");
+        }
         }
 
     })
