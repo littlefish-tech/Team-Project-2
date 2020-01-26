@@ -18,6 +18,7 @@ $(document).on("click", ".signInBut", function(){
 
         if (res.password == passwordC){
             console.log("well technically you logged in");
+            $(".loginPageText").text("YOU LOGGED IN!");
         }
         else{
             console.log("wrong password");
