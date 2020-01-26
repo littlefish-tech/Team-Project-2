@@ -22,6 +22,7 @@ $(document).on("click", ".signInBut", function(){
         }
         else{
             console.log("wrong password");
+            $(".loginPageText").text("Wrong Password");
         }
 
     })
