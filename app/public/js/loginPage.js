@@ -24,10 +24,30 @@ $(document).on("click", ".signInBut", function(){
         if (res.password == passwordC){
             console.log("well technically you logged in");
             $(".loginPageText").text("YOU LOGGED IN!");
+
+            var login = {
+                first_name: res.first_name,
+                last_name: res.last_name,
+                email: res.email,
+                password: res.password,
+                isLoggedIn: 1
+            }
+
+            $.ajax({
+                url: '/api/users/'+res.id,
+                method: 'PUT',
+                data: login
+
+            }).then(function(result){
+                console.log(result);
+                
+            })
+            window.location.replace("./user");
+
         }
         else{
             console.log("wrong password");
-            $(".loginPageText").text("Wrong Password");
+            $(".loginPageText").text("Password/Email incorrect");
         }
         }
 

@@ -47,6 +47,11 @@ module.exports = function(sequelize, DataTypes) {
           
         }
       },
+
+      isLoggedIn:{
+        type: DataTypes.BOOLEAN,
+        default: 0
+      }
            
 
     });

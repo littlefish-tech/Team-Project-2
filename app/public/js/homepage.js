@@ -16,5 +16,7 @@ $(document).ready(function(){
      $("#jumImg").attr("src", trendImg);
 
     });
+
+    
 })
 

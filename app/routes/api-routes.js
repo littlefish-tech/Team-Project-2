@@ -137,6 +137,20 @@ module.exports = function(app, passport) {
     })
   });
 
+  app.put("/api/users/:id", function(req,res){
+    db.Users.update({
+      isLoggedIn: req.body.isLoggedIn
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(results){
+      console.log(results);
+      res.json(results);
+    })
+  });
+
 
   // PUT route for updating posts
   app.put("/api/media", function(req, res) {
@@ -156,6 +170,7 @@ module.exports = function(app, passport) {
       res.json(results);
     })
   });
+  
 
 
   app.put("/api/ratings", function(req, res) {
