@@ -40,9 +40,11 @@ module.exports = function(app, passport) {
   });
   });
 
-  app.get("api/users/:email", function(req,res){
+  app.get("/api/users/:email", function(req,res){
     db.Users.findOne({
-      email: req.params.email
+      where:{
+        email: req.params.email
+      }
     }).
     then(function(results){
       res.json(results);
