@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     var Users = sequelize.define("Users", {
       first_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        //allowNull: false,
         validate: {
           len:[2]
         }
@@ -14,26 +14,16 @@ module.exports = function(sequelize, DataTypes) {
 
       last_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        //allowNull: false,
         validate: {
           len:[2]
         }
       },
+
       
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len:{
-            args: 8,
-            msg: "Password must be at least 8 characters long"
-          }
-          
-        }
-      },
       email:{
         type: DataTypes.STRING,
-        allowNull: false,
+        //allowNull: false,
         unique: true,
         validate:{
           len:{
@@ -44,11 +34,25 @@ module.exports = function(sequelize, DataTypes) {
             msg: "Email must be valid"
           }
         }
-      }
+      },
+
+      password: {
+        type: DataTypes.STRING,
+        //allowNull: false,
+        validate: {
+          len:{
+            args: 8,
+            msg: "Password must be at least 8 characters long"
+          }
+          
+        }
+      },
            
 
     });
     return Users;
+
+    
   }
 
  

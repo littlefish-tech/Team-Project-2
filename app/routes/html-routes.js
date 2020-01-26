@@ -29,6 +29,12 @@ module.exports = function(app) {
 
   app.get("/user", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/userAccount.html"));
-  });
+    console.log(req.body.first_name);
+    });
+
+  
+    
+
 
 };
+

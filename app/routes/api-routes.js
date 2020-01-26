@@ -4,14 +4,14 @@
 
 // Dependencies
 // =============================================================
-var passport = require("passport");
+
 // Requiring our Todo model
 
 var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function(app, passport) {
 
   // GET route for getting all of the posts
   app.get("/api/media", function(req, res) {
@@ -35,32 +35,23 @@ module.exports = function(app) {
   });
   
   app.get("/api/users/", function(req, res){
-    db.User.findAll({}).then(function(results){
+    db.Users.findAll({}).then(function(results){
       res.json(results);
   });
   });
 
+  app.get("api/users/:email", function(req,res){
+    db.Users.findOne({
+      email: req.params.email
+    }).
+    then(function(results){
+      res.json(results);
+    })
+  })
   app.get("/api/ratings/", function(req, res){
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
   });
-  });
-
-   // process the signup form
-   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/profile', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));
-
-  app.post('/login', 
-  passport.authenticate('local', 
-    { successRedirect: '/',
-      failureRedirect: '/login',
-      successFlash: 'Welcome!',
-      failureFlash: 'Invalid email or password.'  }),
-  function(req, res) {    
-    res.redirect('/');
   });
  
 
@@ -69,13 +60,19 @@ module.exports = function(app) {
     // Add sequelize code for creating a post using req.body,
     // then return the result using res.json
     db.Users.create({
-      username: req.body.username,
-      password: req.body.password,
-      email: req.body.email
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password
+      
     }).then(function(results){
       console.log(results);
       res.json(results);
     })
+    .catch(function(err) {
+      // print the error details
+      console.log(err.message);
+    });
   });
 
   app.post("/api/media", function(req, res) {
@@ -173,5 +170,9 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+
+ 
+
+
 
 };

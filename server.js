@@ -1,5 +1,7 @@
 var express = require("express");
-var passport = require("passport");
+var bodyParser = require("body-parser");
+
+var session = require("express-session");
 
 var PORT = process.env.PORT || 8080;
 
@@ -14,10 +16,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(passport.initialize());
-app.use(passport.session());
-// Add the line below, which you're missing:
-require('./app/config/passport.js')(passport);
+
 
 var db = require("./app/models");
 
@@ -36,3 +35,5 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+
