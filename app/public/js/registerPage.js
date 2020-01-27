@@ -61,7 +61,7 @@ function upsertUser(userData){
         console.log("user inputted");
         
         
-        window.location.replace("./user");
+        window.location.replace("./login");
 
 
         
