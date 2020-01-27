@@ -62,7 +62,14 @@ $(document).on("click", ".signInBut", function(){
     })
 
 });
-loggedIn(name);
+
+if(name){
+    loggedIn(name);
+}
+else{
+    console.log("not logged in yet");
+}
+
 checkLogin(id);
 
 console.log(userData);
