@@ -1,5 +1,10 @@
 
 //   console.log("hello");
+
+
+$.get("/api/users", )
+
+
 $(document).ready(function(){
 
   
@@ -16,5 +21,7 @@ $(document).ready(function(){
      $("#jumImg").attr("src", trendImg);
 
     });
+
+
 })
 

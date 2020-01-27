@@ -11,8 +11,10 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <title>Silver Screen</title>
+
   <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/ui-03-basic-2/100/Basic__54-512.png"
     type="image/x-icon">
+
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
@@ -48,18 +50,20 @@
       <div class="container">
 
 
-        <form class="action" action="/login" method="post">
+
+        <form class="action">
           <h6 class="loginPageText">Sign in to Silver Screen</h6>
           <div class="emailInput form-group col-md-12">
             <!-- <label for="inputEmail4" ></label> -->
-            <input type="text" name="username" placeholder="Email" />
+            <input type="text" id = "emailInput" name="username" placeholder="Email" />
           </div>
           <div class="passwordInput form-group col-md-12">
             <!-- <label for="inputPassword4">Password</label> -->
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" id = "passwordInput" name="password" placeholder="Password" />
           </div>
 
-          <button type="submit" class="signInBut btn btn-primary"><a class="signInButText" href="userAccount.html">Sign
+          <button type="submit" class="signInBut btn btn-primary"><a class="signInButText">Sign
+
               in</a></button>
         </form>
       </div>
@@ -71,7 +75,9 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-copyright text-center py-3 bg-dark text-white">© 2020 Copyright: Silver Screen
+
         <a href="https://tranquil-forest-89219.herokuapp.com/"> www.silverscreen.com</a>
+
       </div>
     </div>
     <!-- Copyright -->
@@ -80,15 +86,18 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+  <script src = "./js/loginPage.js"></script>
+
 
 </body>
 

@@ -4,14 +4,14 @@
 
 // Dependencies
 // =============================================================
-var passport = require("passport");
+
 // Requiring our Todo model
 
 var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function(app, passport) {
 
   // GET route for getting all of the posts
   app.get("/api/media", function(req, res) {
@@ -35,25 +35,37 @@ module.exports = function(app) {
   });
   
   app.get("/api/users/", function(req, res){
-    db.User.findAll({}).then(function(results){
+    db.Users.findAll({}).then(function(results){
       res.json(results);
   });
   });
 
+  app.get("/api/users/:email", function(req,res){
+    db.Users.findOne({
+      where:{
+        email: req.params.email
+      }
+    }).
+    then(function(results){
+      res.json(results);
+    })
+  })
+
+  app.get("/api/users/:id", function(req,res){
+    db.Users.findOne({
+      where:{
+        email: req.params.id
+      }
+    }).
+    then(function(results){
+      res.json(results);
+    })
+  })
+  
   app.get("/api/ratings/", function(req, res){
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
   });
-  });
-
-  app.post('/login', 
-  passport.authenticate('local', 
-    { successRedirect: '/',
-      failureRedirect: '/login',
-      successFlash: 'Welcome!',
-      failureFlash: 'Invalid email or password.'  }),
-  function(req, res) {    
-    res.redirect('/');
   });
  
 
@@ -62,13 +74,19 @@ module.exports = function(app) {
     // Add sequelize code for creating a post using req.body,
     // then return the result using res.json
     db.Users.create({
-      username: req.body.username,
-      password: req.body.password,
-      email: req.body.email
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password
+      
     }).then(function(results){
       console.log(results);
       res.json(results);
     })
+    .catch(function(err) {
+      // print the error details
+      console.log(err.message);
+    });
   });
 
   app.post("/api/media", function(req, res) {
@@ -131,6 +149,20 @@ module.exports = function(app) {
     })
   });
 
+  app.put("/api/users/:id", function(req,res){
+    db.Users.update({
+      isLoggedIn: req.body.isLoggedIn
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(results){
+      console.log(results);
+      res.json(results);
+    })
+  });
+
 
   // PUT route for updating posts
   app.put("/api/media", function(req, res) {
@@ -150,6 +182,7 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+  
 
 
   app.put("/api/ratings", function(req, res) {
@@ -166,5 +199,9 @@ module.exports = function(app) {
       res.json(results);
     })
   });
+
+ 
+
+
 
 };
