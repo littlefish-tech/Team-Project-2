@@ -62,8 +62,6 @@ function upsertUser(userData){
         
         
         window.location.replace("./login");
-
-
         
     });
 }
