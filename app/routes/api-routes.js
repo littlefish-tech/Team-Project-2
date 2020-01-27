@@ -50,6 +50,18 @@ module.exports = function(app, passport) {
       res.json(results);
     })
   })
+
+  app.get("/api/users/:id", function(req,res){
+    db.Users.findOne({
+      where:{
+        email: req.params.id
+      }
+    }).
+    then(function(results){
+      res.json(results);
+    })
+  })
+  
   app.get("/api/ratings/", function(req, res){
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
