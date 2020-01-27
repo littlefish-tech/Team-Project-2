@@ -123,7 +123,8 @@ function loggedIn(name){
     $(".signBut").addClass("logout");
     $("#loginRedir").removeAttr("href");
     $(".regBut").text("Account Page");
-    
+    $("#regLink").removeAttr("href").attr("href", "/user");
+
     $("#username").text("Welcome, " + name);
     console.log(name);
 }
