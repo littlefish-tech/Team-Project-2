@@ -61,7 +61,7 @@ module.exports = function(app, passport) {
       res.json(results);
     })
   })
-  
+
   app.get("/api/ratings/", function(req, res){
     db.Ratings.findAll({}).then(function(results){
       res.json(results);
@@ -93,6 +93,7 @@ module.exports = function(app, passport) {
     // Add code here to update a post using the values in req.body, where the id is equal to
     // req.body.id and return the result to the user using res.json
     db.Media.create({
+      imageurl:req.body.imageurl,
       media_name: req.body.media_name,
       description: req.body.description,
       release_yr: req.body.release_year,

@@ -42,8 +42,8 @@
 
         <span>
           <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" aria-label="Search">
-            <button class="logBut clickBut btn my-sm-0" type="submit">Search</button>
+            <input id = "movie" class="form-control mr-sm-2" type="search" aria-label="Search">
+            <button class="srcBut clickBut btn my-sm-0" type="submit">Search</button>
 
           </form>
         </span>
@@ -85,7 +85,7 @@
     <div class="tab-pane fade" id="v-pills-saved" role="tabpanel" aria-labelledby="v-pills-saved-tab">
       <div class="container saveMovieContainer">
         <div class="row">
-            <div class="card movieCard col-lg-3 col-md-3 col-sm-12" id = "movies-view">
+            <div class="card  col-lg-3 col-md-3 col-sm-12" id = "movies-view">
               <img class="card-img-top"
                 src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
                 alt="Card image cap">
@@ -97,7 +97,7 @@
                 <a href="#" class="card-link">More Movie Detail</a>
               </div>
             </div>
-            <div class="card movieCard col-lg-3 col-md-3 col-sm-12" id = "moviesView">
+            <div class="card col-lg-3 col-md-3 col-sm-12" id = "moviesView">
               <img class="card-img-top"
                 src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
                 alt="Card image cap">
@@ -109,7 +109,7 @@
                 <a href="#" class="card-link">More Movie Detail</a>
               </div>
             </div>
-            <div class="card movieCard col-lg-3 col-md-3 col-sm-12" id = "movies-view">
+            <div class="card col-lg-3 col-md-3 col-sm-12" id = "movies-view">
               <img class="card-img-top"
                 src="https://lumiere-a.akamaihd.net/v1/images/tros-hero-in-theaters-mobile-a_e8a421c0.jpeg?region=0,0,1024,626&width=960"
                 alt="Card image cap">
@@ -129,11 +129,11 @@
 
       <div class="tab-pane fade" id="v-pills-results" role="tabpanel" aria-labelledby="v-pills-results-tab">
         <div class="container MovieResultsContainer">
-          <div class="row">
-            <div class="card movieCard col-lg-3 col-md-3 col-sm-12">
+          <div id = "srcRes" class="row">
+            
       
             
-            </div>
+           
           </div>
         </div>
   </div>
@@ -164,9 +164,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-  <script src ="js/userAccount.js"></script>
   <script src = "js/search.js"></script>
+  <script src ="js/userAccount.js"></script>
+ 
 
 
 
