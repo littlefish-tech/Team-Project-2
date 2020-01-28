@@ -51,5 +51,16 @@
   }
   ```
 
+#### Technologies we used:
+- Bootstrap
+- HTML
+- CSS
+- Node.js
+- Express.js
+- Sequelize.js
+- MySQL
+- Javascript
+- jQuery
+- Heroku
 
 
