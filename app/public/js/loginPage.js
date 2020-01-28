@@ -1,12 +1,7 @@
 var name; //name used to identify current user
-
 var id; //Id used to identify current user
-
 var login; //Object used to hold put data
-
 var password;//password for authentication
-
-
 $(document).on("click", ".signInBut", function(){
     event.preventDefault();
     var email = $("#emailInput").val().trim();

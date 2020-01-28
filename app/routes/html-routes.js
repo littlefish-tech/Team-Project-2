@@ -10,23 +10,24 @@ var path = require("path");
 // =============================================================
 module.exports = function(app) {
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+  
 
-  // index route loads view.html
+  //To Homepage
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  // Route to the cms page
+  //To loginpage
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/loginPage.html"));
   });
 
-  // blog route loads blog.html
+  //To registration page
   app.get("/register", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/registerPage.html"));
   });
-
+  
+  //To user interface to add movies
   app.get("/user", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/userAccount.html"));
     console.log(req.body.first_name);

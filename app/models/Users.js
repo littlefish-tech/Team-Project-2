@@ -1,7 +1,5 @@
   
 module.exports = function(sequelize, DataTypes) {
-   
-
     //USER TABLE 
     var Users = sequelize.define("Users", {
       first_name: {
@@ -11,16 +9,13 @@ module.exports = function(sequelize, DataTypes) {
           len:[2]
         }
       },
-
       last_name: {
         type: DataTypes.STRING,
         //allowNull: false,
         validate: {
           len:[2]
         }
-      },
-
-      
+      },  
       email:{
         type: DataTypes.STRING,
         //allowNull: false,
@@ -35,7 +30,6 @@ module.exports = function(sequelize, DataTypes) {
           }
         }
       },
-
       password: {
         type: DataTypes.STRING,
         //allowNull: false,
@@ -47,12 +41,10 @@ module.exports = function(sequelize, DataTypes) {
           
         }
       },
-
       isLoggedIn:{
         type: DataTypes.BOOLEAN,
         default: 0
       }
-           
 
     });
     return Users;

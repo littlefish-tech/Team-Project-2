@@ -3,19 +3,12 @@ $(document).on("click", ".signInBut", function(){
     $("#emailError").empty();
     event.preventDefault() 
     var emailcheck = $("#inputEmail4").val().trim();
-    var passwordcheck = $("#inputPassword4").val().trim();
-
-    
-   
-
-    
-       
+    var passwordcheck = $("#inputPassword4").val().trim();    
     if (emailcheck.indexOf('@') == -1){
         console.log("invalid email");
         
         $("#emailError").text("Email must be valid");
     }
-
     else{
         
         $.get("api/users",{

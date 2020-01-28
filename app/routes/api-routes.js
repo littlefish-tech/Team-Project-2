@@ -90,8 +90,7 @@ module.exports = function(app, passport) {
   });
 
   app.post("/api/media", function(req, res) {
-    // Add code here to update a post using the values in req.body, where the id is equal to
-    // req.body.id and return the result to the user using res.json
+
     db.Media.create({
       imageurl:req.body.imageurl,
       media_name: req.body.media_name,
