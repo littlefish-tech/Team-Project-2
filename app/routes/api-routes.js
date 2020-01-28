@@ -96,8 +96,8 @@ module.exports = function(app, passport) {
       imageurl:req.body.imageurl,
       media_name: req.body.media_name,
       description: req.body.description,
-      release_yr: req.body.release_year,
-      creator_id: req.body.creator_id
+      release_yr: req.body.release_yr,
+      creator_ID: req.body.creator_ID
     }).then(function(results){
       console.log(results);
       res.json(results);

@@ -8,38 +8,20 @@ module.exports = function(sequelize, DataTypes) {
       media_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          len: {
-            args: 1,
-            msg: "Movie must be at least 1 character long"
-          }
-        }
+        unique: true,
       },
       description: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len:{
-            args: 100,
-            msg: "Description must be at least 100 characters long"
-          }
-          
-        }
+        allowNull: false
       },
       release_yr:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate:{
-          len:{
-            args: 4,
-            msg: "Year must be valid"
-          }
-        }
+        type: DataTypes.STRING,
+      
       },
       creatorID:{
         type: DataTypes.INTEGER,
-        allowNull: false,
-      }   
+   
+      }  
 
     });
     return Media;

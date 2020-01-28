@@ -1,5 +1,4 @@
 
-var media;
 
 $(document).on("click", ".add", function(){
  
@@ -18,12 +17,12 @@ $(document).on("click", ".add", function(){
   }).then(function(response){
     console.log(response);
 
-    media = {
+    var media = {
       imageurl: response.Poster,
       media_name: response.Title,
       description: response.Plot,
       release_yr: response.Released,
-      creator_id: 1
+      creator_ID: 1
     }
     console.log(media);
     
@@ -39,8 +38,10 @@ function postMedia(media){
   });
 }
 
-$(".srcBut").on("click", function(event) {
 
+
+$(".srcBut").on("click", function(event) {
+   $("#srcRes").empty();
     // event.preventDefault() can be used to prevent an event's default behavior.
     // Here, it prevents the submit button from trying to submit a form when clicked
     event.preventDefault();
@@ -76,7 +77,8 @@ $(".srcBut").on("click", function(event) {
     //   </div>
     // </div>
     for (var i = 0; i < 10; i++){  
-  
+      
+      
       
       $("#srcRes").append("<div class='rmv card movieCards col-lg-3 col-md-3 col-sm-12'>")
       
@@ -84,7 +86,10 @@ $(".srcBut").on("click", function(event) {
                       .append("<div class = 'card-body'>")
                       .append("<p class = 'cardText title'> " + response.Search[i].Title)
                       .append("<button type = 'submit' class = 'add' >Add to collection!</button>");
+      
       $(".rmv").removeClass("movieCards");
+
+      
                      
     }
       // .append(JSON.stringify(response));
