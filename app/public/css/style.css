@@ -205,7 +205,10 @@ body {
     border-color: #748ab9 !important;
     transition: all 0.4s ease 0s;
     } */
-
+.fa-star:hover{
+    background-color: yellow;
+    
+}
 .add{
   border: lightgrey 2px solid;
   background-color:  #494949;
